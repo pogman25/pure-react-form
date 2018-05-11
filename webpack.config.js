@@ -14,6 +14,12 @@ module.exports = {
     entry: {
         main: './src/index.jsx'
     },
+    devServer: {
+        historyApiFallback: {
+            disableDotRule: true
+        },
+        progress: true
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: path.join('assets', 'js', '[name].[hash:3].js'),
