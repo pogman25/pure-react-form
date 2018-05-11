@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Wrapper from './Wrapper';
 
+@Wrapper
 class Form extends Component {
-    render () {
-        return (
-            <div>
-                проверка формы
-            </div>
-        )
+    render() {
+        console.log(this.props);
+        return <div>проверка формы</div>;
     }
 }
 
-export default Form
+export default Form;

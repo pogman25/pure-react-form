@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import Form from './From';
 
-class Wrapper extends Component {
-    render() {
-        return (
-            <div>
-                проверка на подгрузку
-                <Form />
-            </div>
-        );
-    }
+export default function Wrapper(WrappedComponent) {
+    return class Wrapper extends Component {
+        state = {
+            isFetching: false,
+            data: {},
+            errors: {}
+        };
+        render() {
+            return <WrappedComponent {...this.state} />;
+        }
+    };
 }
-
-export default Wrapper;

@@ -1,7 +1,7 @@
-p {
-    color: red;
-}
-
-.mainTitle {
-    font-size: 20px;
+.main {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
