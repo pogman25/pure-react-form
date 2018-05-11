@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-
+import Wrapper from './components/Wrapper';
 const styles = require('./styles.scss');
 
 class App extends Component {
@@ -9,6 +9,7 @@ class App extends Component {
             <div>
                 <p>first example</p>
                 <p className={styles.mainTitle}>Main Title</p>
+                <Wrapper />
             </div>
         );
     }

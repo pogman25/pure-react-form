@@ -4,7 +4,7 @@
   "description": "react forms without state managment",
   "main": "index.jsx",
   "scripts": {
-    "dev": "webpack --mode development  --watch",
+    "dev": "webpack-dev-server --open --mode development",
     "build": "npm run clean && webpack --mode production",
     "clean": "rimraf ./dist/*",
     "test": "jest"
@@ -39,7 +39,8 @@
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "webpack": "^4.8.1",
-    "webpack-cli": "^2.1.3"
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
     "node-sass": "^4.9.0",
