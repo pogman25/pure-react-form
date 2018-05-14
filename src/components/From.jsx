@@ -4,13 +4,15 @@ import Header from './Header';
 import Input from './Input';
 import TextArea from './TextArea';
 
+const styles = require('./styles');
+
 @Wrapper
 class Form extends Component {
     render() {
         const { data, errors, handleInput, handleSubmit, handleBlur } = this.props;
 
         return (
-            <div>
+            <div className={styles.mainForm}>
                 <form onSubmit={handleSubmit} action="">
                     <Input
                         name="firstName"

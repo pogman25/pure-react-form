@@ -1,4 +1,6 @@
 import React from 'react';
+import cx from 'classnames';
+const styles = require('./styles');
 
 const Input = ({
     type = 'text',
@@ -7,20 +9,22 @@ const Input = ({
     label,
     required = false,
     error = '',
+    className,
     ...props
 }) => {
     return (
-        <label>
+        <label className={styles.label}>
             {`${label}`}
             {required && '*'}
             <input
+                className={cx(styles.input, { [className]: !!className })}
                 type={type}
                 autoFocus={autoFocus}
                 autoComplete={autoComplete}
                 required={required}
                 {...props}
             />
-            {!!error && <span>{error}</span>}
+            {!!error && <span className={styles.error}>{error}</span>}
         </label>
     );
 };
