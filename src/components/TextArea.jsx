@@ -1,6 +1,4 @@
 import React from 'react';
-import cx from 'classnames';
-const styles = require('./styles');
 
 const TextArea = ({
     type = 'text',
@@ -15,11 +13,11 @@ const TextArea = ({
     ...props
 }) => {
     return (
-        <label className={styles.label}>
+        <label className="label">
             {`${label}`}
             {required && '*'}
             <textarea
-                className={cx(styles.textarea, { [className]: !!className })}
+                className={`textarea ${!!className ? className : ''}`}
                 autoFocus={autoFocus}
                 autoComplete={autoComplete}
                 required={required}
@@ -27,7 +25,7 @@ const TextArea = ({
                 rows={rows}
                 {...props}
             />
-            {!!error && <span className={styles.error}>{error}</span>}
+            {!!error && <span className="error">{error}</span>}
         </label>
     );
 };

@@ -6,3 +6,10 @@ export const initValues = {
     password: '',
     confirmPassword: ''
 };
+
+export const validateFields = {
+    firstName: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+}

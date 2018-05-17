@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
 import Wrapper from '../conteiners/Wrapper';
-import Header from './Header';
 import Input from './Input';
-import TextArea from './TextArea';
 
-const styles = require('./styles');
-
-@Wrapper
 class Form extends Component {
     render() {
         const { data, errors, handleInput, handleSubmit, handleBlur } = this.props;
 
         return (
-            <div className={styles.mainForm}>
-                <form onSubmit={handleSubmit} action="">
+            <div className='mainForm'>
+                <form onSubmit={handleSubmit}>
                     <Input
                         name="firstName"
                         label="Имя пользователя"
@@ -76,4 +71,4 @@ class Form extends Component {
     }
 }
 
-export default Form;
+export default Wrapper(Form);

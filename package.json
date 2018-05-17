@@ -1,54 +1,16 @@
 {
-  "name": "pure-react-form",
-  "version": "0.0.1",
-  "description": "react forms without state managment",
-  "main": "index.jsx",
-  "scripts": {
-    "dev": "webpack-dev-server --mode development --open --color --history-api-fallback --port 3000",
-    "build": "npm run clean && webpack --mode production",
-    "clean": "rimraf ./dist/*",
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pogman25/pure-react-form.git"
-  },
-  "keywords": [
-    "react",
-    "form"
-  ],
-  "author": "pogman25",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pogman25/pure-react-form/issues"
-  },
-  "homepage": "https://github.com/pogman25/pure-react-form#readme",
-  "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.28.11",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "html-webpack-plugin": "^3.2.0",
-    "postcss-cssnext": "^3.1.0",
-    "postcss-csso": "^3.0.0",
-    "postcss-loader": "^2.1.5",
-    "rimraf": "^2.6.2",
-    "sass-loader": "^7.0.1",
-    "style-loader": "^0.21.0",
-    "webpack": "^4.8.1",
-    "webpack-cli": "^2.1.3",
-    "webpack-dev-server": "^3.1.4",
-    "node-sass": "^4.9.0"
-  },
+  "name": "init",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "classnames": "^2.2.5",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
