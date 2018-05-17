@@ -3,5 +3,6 @@ export const initValues = {
     lastName: '',
     age: '',
     email: '',
-    comments: ''
+    password: '',
+    confirmPassword: ''
 };

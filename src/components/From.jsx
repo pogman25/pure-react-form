@@ -49,12 +49,25 @@ class Form extends Component {
                         onChange={handleInput}
                         error={errors.age}
                     />
-                    <TextArea
-                        name="comments"
-                        label="Комментарии"
-                        value={data.comments}
+                    <Input
+                        name="password"
+                        label="Пароль"
+                        type="password"
+                        value={data.password}
                         onChange={handleInput}
-                        error={errors.comments}
+                        error={errors.password}
+                        onBlur={handleBlur}
+                        required
+                    />
+                    <Input
+                        name="confirmPassword"
+                        label="Подтвердите Пароль"
+                        type="password"
+                        value={data.confirmPassword}
+                        onChange={handleInput}
+                        error={errors.confirmPassword}
+                        onBlur={handleBlur}
+                        required
                     />
                     <button type="submit">Submit</button>
                 </form>
