@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { initValues } from './initValue';
+import { initValues, validateFields } from './initValue';
 import { validateEmail } from '../utils';
 
 export default function Wrapper(WrappedComponent) {
@@ -7,7 +7,7 @@ export default function Wrapper(WrappedComponent) {
         state = {
             isFetching: false,
             data: initValues,
-            errors: {}
+            errors: validateFields
         };
 
         handleInput = e => {
@@ -26,7 +26,16 @@ export default function Wrapper(WrappedComponent) {
 
         handleSubmit = e => {
             e.preventDefault();
-            const { data } = this.state;
+            const { data, errors } = this.state;
+            const isValidate = Object.keys(errors).reduce(
+                (sum, item) => sum && this.validateForm(item, data[item]),
+                true
+            );
+            if (isValidate) {
+                console.log('here We Send Data', data);
+            } else {
+                console.log('no valid data');
+            }
         };
 
         handleBlur = e => {
@@ -35,8 +44,9 @@ export default function Wrapper(WrappedComponent) {
         };
 
         validateForm = (name, value) => {
+            const isEmpty = this.isNotEmptyValue(name, value);
             switch (true) {
-                case name === 'email' && this.isNotEmptyValue(name, value):
+                case name === 'email' && isEmpty:
                     if (!validateEmail(value)) {
                         this.setState(({ errors }) => ({
                             errors: {
@@ -47,7 +57,7 @@ export default function Wrapper(WrappedComponent) {
                         return false;
                     }
                     return true;
-                case name === 'confirmPassword' && this.isNotEmptyValue(name, value):
+                case name === 'confirmPassword' && isEmpty:
                     const {
                         data: { password, confirmPassword }
                     } = this.state;
@@ -62,7 +72,7 @@ export default function Wrapper(WrappedComponent) {
                     }
                     return true;
                 default:
-                    return this.isNotEmptyValue(name, value);
+                    return isEmpty;
             }
         };
 
