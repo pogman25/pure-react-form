@@ -2,12 +2,30 @@ import React, { Component } from 'react';
 import Wrapper from '../conteiners/Wrapper';
 import Input from './Input';
 
+const initValues = {
+    firstName: '',
+    lastName: '',
+    address: '',
+    age: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+};
+
+const validateFields = {
+    firstName: '',
+    email: '',
+    address: '',
+    password: '',
+    confirmPassword: ''
+};
+
 class Form extends Component {
     render() {
         const { data, errors, handleInput, handleSubmit, handleBlur } = this.props;
 
         return (
-            <div className='mainForm'>
+            <div className="mainForm">
                 <form onSubmit={handleSubmit}>
                     <Input
                         name="firstName"
@@ -45,6 +63,16 @@ class Form extends Component {
                         error={errors.age}
                     />
                     <Input
+                        name="address"
+                        label="Адрес"
+                        value={data.address}
+                        onChange={handleInput}
+                        onBlur={handleBlur}
+                        autoFocus
+                        required
+                        error={errors.address}
+                    />
+                    <Input
                         name="password"
                         label="Пароль"
                         type="password"
@@ -71,4 +99,4 @@ class Form extends Component {
     }
 }
 
-export default Wrapper(Form);
+export default Wrapper(initValues, validateFields)(Form);
